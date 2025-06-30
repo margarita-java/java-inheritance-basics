@@ -1,6 +1,12 @@
 package practice;
 
 public class CardAccount extends BankAccount {
-    // не забывайте, обращаться к методам и конструкторам родителя
-    // необходимо используя super, например, super.put(10D);
+
+    @Override
+    public void take(double amountToTake) {
+        double amountWithCommission = amountToTake * 1.01;
+        if (amountWithCommission > 0 && amountWithCommission <= balance) {
+            balance -= amountWithCommission;
+        }
+    }
 }
